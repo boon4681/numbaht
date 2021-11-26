@@ -6,6 +6,10 @@ function include(text: string, r: string) {
 }
 
 function lan(text: string): any {
+    if (include(text, "ล้าน")) {
+        let i = text.indexOf("ล้าน")
+        return String(1e6 + lan(text.slice(i + 4, text.length))).slice(1)
+    }
     if (include(text, "แสน")) {
         let i = text.indexOf("แสน")
         let m = text.slice(0, i);
@@ -57,12 +61,12 @@ function lan(text: string): any {
 }
 
 export function convert(text: string) {
-    let baht_satang = text.split("บาท").filter(a => a)
+    let baht_satang = text.split('บาท').filter(a => a)
     if (baht_satang.length > 1) {
         if (baht_satang.filter(a => a.indexOf("สตางค์") !== -1).length > 0) {
             throw "satang are not support yet"
         }
         throw "bad inputs"
     }
-    return text.split("ล้าน").map(a => lan(a)).join("")
+    return text.replaceAll("ล้าน"," ล้าน").split(" ").map(a => lan(a)).join("")
 }

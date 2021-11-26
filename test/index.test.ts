@@ -1,6 +1,36 @@
+
 import { convert } from '../src'
 
+
 test('works', () => {
-    expect(convert("หนึ่งพันสองร้อยหกสิบสี่ล้านห้าแสนหกหมื่นห้าพันเจ็ดร้อยหกสิบห้า")).toEqual('1264565765')
-    expect(convert("เก้าหมื่นแปดพันเก้าร้อยสี่สิบห้าล้านหกแสนหกหมื่นห้าพันหกร้อยยี่สิบหก")).toEqual('98945665626')
+    expect(convert("หนึ่งบาท")).toEqual('1')
+    expect(convert("สองบาท")).toEqual('2')
+    expect(convert("สามบาท")).toEqual('3')
+    expect(convert("สี่บาท")).toEqual('4')
+    expect(convert("ห้าบาท")).toEqual('5')
+    expect(convert("หกบาท")).toEqual('6')
+    expect(convert("เจ็ดบาท")).toEqual('7')
+    expect(convert("แปดบาท")).toEqual('8')
+    expect(convert("เก้าบาท")).toEqual('9')
+    expect(convert("สิบบาท")).toEqual('10')
+    expect(convert("สิบห้าบาท")).toEqual('15')
+    expect(convert("สิบเก้าบาท")).toEqual('19')
+    expect(convert("ยี่สิบบาท")).toEqual('20')
+    expect(convert("ยี่สิบห้าบาท")).toEqual('25')
+    expect(convert("ยี่สิบเก้าบาท")).toEqual('29')
+    expect(convert("หนึ่งร้อยบาท")).toEqual('100')
+    expect(convert("หนึ่งร้อยสิบบาท")).toEqual('110')
+    expect(convert("หนึ่งร้อยยี่สิบบาท")).toEqual('120')
+    expect(convert("หนึ่งร้อยยี่สิบเอ็ดบาท")).toEqual('121')
+    expect(convert("หนึ่งร้อยยี่สิบห้าบาท")).toEqual('125')
+    expect(convert("สองร้อยบาท")).toEqual('200')
+    expect(convert("สองร้อยแปดสิบบาท")).toEqual('280')
+    expect(convert("สองร้อยแปดสิบเก้าบาท")).toEqual('289')
+    expect(convert("หนึ่งพันบาท")).toEqual('1000')
+    expect(convert("หนึ่งล้านล้านบาท")).toEqual('1000000000000')
+    expect(convert("หนึ่งพันสองร้อยหกสิบสี่ล้านห้าแสนหกหมื่นห้าพันเจ็ดร้อยหกสิบห้าบาท")).toEqual('1264565765')
+    expect(convert("เก้าหมื่นแปดพันเก้าร้อยสี่สิบห้าล้านหกแสนหกหมื่นห้าพันหกร้อยยี่สิบหกบาท")).toEqual('98945665626')
+    expect(convert("ห้าแสนสี่หมื่นหกพันสามร้อยยี่สิบแปดล้านบาท")).toEqual('546328000000')
+    expect(convert("หนึ่งแสนสองหมื่นสามพันสี่ร้อยห้าสิบหกล้านเจ็ดแสนแปดหมื่นเก้าพันหนึ่งร้อยยี่สิบสามล้านสี่แสนห้าหมื่นหกพันเจ็ดร้อยแปดสิบบาท")).toEqual('123456789123456780')
 })
+
